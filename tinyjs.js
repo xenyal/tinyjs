@@ -1,9 +1,11 @@
-var _$ = (function() {
-    var elements = document.querySelectorAll(selector);
-    return elements;
-})
+if ('querySelector' in document && 'addEventListener' in window) {
+    var _$ = (function() {
+        var elements = document.querySelectorAll(selector);
+        return elements;
+    })
+}
 
-if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+if (typeof _$ !== 'undefined' && typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
     module.exports = _$;
 }
 else {
